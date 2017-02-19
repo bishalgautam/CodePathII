@@ -51,15 +51,15 @@
       }else if(!has_length($state['name'], ['min' => 2 , 'max' =>255])){
         $errors[] = h("State name must be between 2 and 255 characters.");
       }else if(!has_valid_names($state['name'])){
-        $errors[] = h("State name must have all alpabhets.");
+        $errors[] = h("State name must have all alpabhets and spaces.");
       }
 
     if(is_blank($state['code'])){
         $errors[] = h("State code cannot be blank.");
       }else if(!has_length($state['code'], ['exact'=>2])){
         $errors[] = h("Code must be 2 characters.");
-      }else if(!has_valid_names($state['code'])){
-        $errors[] = h("Code name must have all alphabhets.");
+      }else if(!has_valid_code($state['code'])){
+        $errors[] = h("Code name must be 2 characters in Capital Letters");
       }
     return $errors;
   }
@@ -318,7 +318,7 @@
         $errors[] = h("Phone number cannot be blank.");
     }else if(!has_valid_phoneNumber($salesperson['phone'])){
         $errors[] = h("Enter a valid phone number");
-    }else if( strlen(preg_replace('/[^0-9]/','', $salesperson['phone'])) != 10){ 
+    }else if(!has_valid_phone_number_length($salesperson['phone'])){ 
         $errors[] = h("Phone number must be 10 digits");
     }
 
@@ -446,27 +446,36 @@
 
   function validate_user($user, $errors=array()) {
     if (is_blank($user['first_name'])) {
-      $errors[] = "First name cannot be blank.";
+      $errors[] = h("First name cannot be blank.");
     } elseif (!has_length($user['first_name'], array('min' => 2, 'max' => 255))) {
-      $errors[] = "First name must be between 2 and 255 characters.";
+      $errors[] = h("First name must be between 2 and 255 characters.");
+    } elseif(!has_valid_names($user['first_name'])){
+      $errors[] = h("First name can only contain alphabhets and spaces.");
     }
 
     if (is_blank($user['last_name'])) {
-      $errors[] = "Last name cannot be blank.";
+      $errors[] = h("Last name cannot be blank.");
     } elseif (!has_length($user['last_name'], array('min' => 2, 'max' => 255))) {
-      $errors[] = "Last name must be between 2 and 255 characters.";
+      $errors[] = h("Last name must be between 2 and 255 characters.");
+    } elseif(!has_valid_names($user['last_name'])){
+      $errors[] = h("Last name can only contain alphabhets and spaces.");
     }
 
     if (is_blank($user['email'])) {
-      $errors[] = "Email cannot be blank.";
+      $errors[] = h("Email cannot be blank.");
     } elseif (!has_valid_email_format($user['email'])) {
-      $errors[] = "Email must be a valid format.";
+      $errors[] = h("Email must be a valid format.");
+    } elseif (!has_valid_email($user['email'])) {
+      $errors[] = h("Email address can only contain [A-Z], [a-z], [0-9], dot, hypen and underscore.");
     }
 
     if (is_blank($user['username'])) {
-      $errors[] = "Username cannot be blank.";
+      $errors[] = h("Username cannot be blank.");
     } elseif (!has_length($user['username'], array('max' => 255))) {
-      $errors[] = "Username must be less than 255 characters.";
+      $errors[] = h("Username must be less than 255 characters.");
+    } elseif (!has_valid_username($user['username'])) {
+      # code...
+       $errors[] = h("Username must start with alphabhets and contain only the whitelisted characters: A-Z, a-z, 0-9, and _.");
     }
     return $errors;
   }
