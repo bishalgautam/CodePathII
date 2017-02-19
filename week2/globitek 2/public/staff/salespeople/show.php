@@ -16,21 +16,21 @@ $salesperson = db_fetch_assoc($salespeople_result);
 <div id="main-content">
   <a href="index.php">Back to Salespeople List</a><br />
 
-  <h1>Salesperson: <?php echo $salesperson['first_name'] . " " . $salesperson['last_name']; ?></h1>
+  <h1>Salesperson: <?php echo h($salesperson['first_name']) . " " . h($salesperson['last_name']); ?></h1>
 
   <?php
     echo "<table id=\"salesperson\">";
     echo "<tr>";
     echo "<td>Name: </td>";
-    echo "<td>" . $salesperson['first_name'] . " " . $salesperson['last_name'] . "</td>";
+    echo "<td>" . h($salesperson['first_name']) . " " . h($salesperson['last_name']) . "</td>";
     echo "</tr>";
     echo "<tr>";
     echo "<td>Phone: </td>";
-    echo "<td>" . $salesperson['phone'] . "</td>";
+    echo "<td>" . h($salesperson['phone']) . "</td>";
     echo "</tr>";
     echo "<tr>";
     echo "<td>Email: </td>";
-    echo "<td>" . $salesperson['email'] . "</td>";
+    echo "<td>" . h($salesperson['email']) . "</td>";
     echo "</tr>";
     echo "</table>";
 

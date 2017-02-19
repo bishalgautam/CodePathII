@@ -14,14 +14,14 @@ $errors = array();
 
 if(is_post_request()) {
   // Confirm that values are present before accessing them.
-  if(isset($_POST['name'])) { $state['name'] = $_POST['name']; }
-  if(isset($_POST['code'])) { $state['code'] = $_POST['code']; }
+  if(isset($_POST['name'])) { $state['name'] = h($_POST['name']); }
+  if(isset($_POST['code'])) { $state['code'] = h($_POST['code']); }
 
 
   $result = update_state($state);
   
   if($result === true) {
-    redirect_to('show.php?id=' . $state['id']);
+    redirect_to('show.php?id=' . u($state['id']));
   } else {
     $errors = $result;
   }
@@ -47,6 +47,8 @@ if(is_post_request()) {
     
     <input type="submit" name="submit" value="Update"  />
   </form>
+  <br>
+  <a href="show.php?=<?php echo $state['id']; ?>" > Cancel </a>
 
 </div>
 

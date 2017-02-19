@@ -54,6 +54,9 @@ if(is_post_request()) {
     <input type="submit" name="submit" value="Update"  />
   </form>
 
+  <br>
+  <a href="show.php?id=<?php echo $user['id']; ?>" > Cancel </a>
+
 </div>
 
 <?php include(SHARED_PATH . '/footer.php'); ?>

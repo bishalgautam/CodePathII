@@ -24,15 +24,15 @@ $state_id = $territory['state_id'];
     echo "<table id=\"territory\">";
     echo "<tr>";
     echo "<td>Name: </td>";
-    echo "<td>" . $territory['name'] . "</td>";
+    echo "<td>" . h($territory['name']) . "</td>";
     echo "</tr>";
     echo "<tr>";
     echo "<td>State ID: </td>";
-    echo "<td>" . $territory['state_id'] . "</td>";
+    echo "<td>" . h($territory['state_id']) . "</td>";
     echo "</tr>";
     echo "<tr>";
     echo "<td>Position: </td>";
-    echo "<td>" . $territory['position'] . "</td>";
+    echo "<td>" . h($territory['position']) . "</td>";
     echo "</tr>";
     echo "</table>";
 

@@ -26,7 +26,7 @@ if(is_post_request()) {
   $result = update_salesperson($salesperson);
   
   if($result === true) {
-    redirect_to('show.php?id=' . $salesperson['id']);
+    redirect_to('show.php?id=' . u($salesperson['id']));
   } else {
     $errors = $result;
   }
@@ -39,7 +39,7 @@ if(is_post_request()) {
 <div id="main-content">
   <a href="index.php">Back to Salespeople List</a><br />
 
-  <h1>Edit Salesperson: <?php echo $salesperson['first_name'] . " " . $salesperson['last_name']; ?></h1>
+  <h1>Edit Salesperson: <?php echo h($salesperson['first_name']) . " " . h($salesperson['last_name']); ?></h1>
 
   <?php echo display_errors($errors); ?>
 
@@ -55,6 +55,9 @@ if(is_post_request()) {
     <input type="text" name="email" value="<?php echo $salesperson['email']; ?>" /><br />
     <input type="submit" name="submit" value="Update"  />
   </form>
+
+   <br>
+  <a href="show.php?=<?php echo $salesperson['id']; ?>" > Cancel </a>
 
 </div>
 
