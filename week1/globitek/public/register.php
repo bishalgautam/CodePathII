@@ -55,7 +55,7 @@
       //For INSERT statments, $result is just true/false
         $result = db_query($db, $sql);
         if($result) {
-          redirect_to("public/registration_success.php");
+          redirect_to("registration_success.php");
          db_close($db);
       // TODO redirect user to success page
 
