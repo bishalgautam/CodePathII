@@ -9,6 +9,8 @@
   $id = $_GET['id'];
   $agent_result = find_agent_by_id($id);
   $agent = db_fetch_assoc($agent_result);
+  
+  
 
   $message_result = find_messages_for($agent['id']);
 ?>
@@ -46,9 +48,27 @@
         <?php
           $created_at = strtotime($message['created_at']);
           
+          $sender_id = $message['sender_id'];
+          $sender_result = find_agent_by_id($sender_id);
+          $sender =  db_fetch_assoc($sender_result);
           // Oooops.
           // My finger accidentally hit the delete-key.
           // Sorry, APEX!!!
+          $message_text = $message['cipher_text'];
+
+          //get the private key 
+          $my_id = $current_user['id'];
+          $result = find_agent_by_id($my_id);
+          $my_result = db_fetch_assoc($result);
+          $private_key = $my_result['private_key'];
+
+          if($current_user['id'] == $agent['id']){
+            $message_text = pkey_decrypt($message_text, $private_key);
+          }
+          
+          $public_key = $sender['public_key'];
+          $result = verify_signature($message['cipher_text'], $message['signature'], $public_key);
+          $validity_text = $result === 1 ? 'Valid' : 'Not valid';
           
         ?>
         <tr>

@@ -5,8 +5,7 @@
     $my_id = 1;
     $result = find_agent_by_id($my_id);
     return db_fetch_assoc($result);
-  }
-  
+  } 
   //
   // AGENT QUERIES
   //
