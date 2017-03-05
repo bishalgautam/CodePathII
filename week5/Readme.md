@@ -1,6 +1,6 @@
 # Project 5 - Encryption
 
-Time spent: **X** hours spent in total
+Time spent: **7** hours spent in total
 
 ## User Stories
 
@@ -38,8 +38,8 @@ The following **required** functionality is completed:
   * [X]  Required: Your messages are automatically decrypted
 
 8\. Identify the Double Agent
-  * [ ]  Required: Decrypt as many email messages as possible
-  * [ ]  Required: Identify the double agent: ____________________
+  * [X]  Required: Decrypt as many email messages as possible
+  * [X]  Required: Identify the double agent: May be Austin but no solid evidence to prove that. 
 
 The following objectives are **optional**:
 
