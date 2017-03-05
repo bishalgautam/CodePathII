@@ -61,13 +61,14 @@ The following objectives are **optional**:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/w4CfH1K.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+* [] The double agent finding was not very solid. I just thought I can be very sure abt the agent but its just a guess at the end.
 
 ## License
 
