@@ -39,7 +39,7 @@ The following **required** functionality is completed:
 
 8\. Identify the Double Agent
   * [X]  Required: Decrypt as many email messages as possible
-  * [X]  Required: Identify the double agent: May be Austin but no solid evidence to prove that. 
+  * [X]  Required: Identify the double agent: May be Natasha but no solid evidence to prove that. 
 
 The following objectives are **optional**:
 
