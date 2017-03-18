@@ -51,7 +51,7 @@ if(is_post_request() && request_is_same_domain()) {
         // Username found, but password does not match.
         $recorded = record_failed_login($username);
         if($recorded)
-          $errors[] = "Log in was unsuccessful.";
+          $errors[] = "Log in was not successful.";
       }
     } else {
       // No username found
