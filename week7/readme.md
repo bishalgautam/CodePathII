@@ -36,14 +36,16 @@ Time spent: **7** hours spent in total
      1)TEST!!![caption width="1" caption='<a href="' ">]</a><a href="http://onMouseOver='alert(1)'">Click me</a>
   - [X] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
+1. (Required) Vulnerability Name or ID : CVE	2015-5622
+  - [ ] Summary: Authenticated Cross-Site Scripting (XSS) in post/page (text editor mode). Editor user and up.
+    - Vulnerability types: XSS
+    - Tested in version: 4.2.2
+    - Fixed in version: 4.2.3
+  - [X] GIF Walkthrough: 
+    [link ] ( http://i.imgur.com/AJ7RatL.gif)
+  - [X] Steps to recreate: Create a page or post with the followig tag 
+      <a href="[caption code=">]</a><a title=" onmouseover=alert('test')  ">link</a>
+  - [X] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
 1. (Optional) Vulnerability Name or ID
   - [ ] Summary: 
