@@ -47,14 +47,17 @@ Time spent: **7** hours spent in total
       <a href="[caption code=">]</a><a title=" onmouseover=alert('test')  ">link</a>
   - [X] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
+1. (Optional) Vulnerability Name or ID : CVE	2016-7168
+  - [X] Summary: Authenticated Stored Cross-Site Scripting via Image Filename
+    - Vulnerability types: XSS
+    - Tested in version: 4.2.2
+    - Fixed in version: 4.2.10
+  - [X] GIF Walkthrough: 
+   [Link ](http://i.imgur.com/NkDgBX5.gif)
+  - [X] Steps to recreate: 
+  - A WordPress admin uploads a malicious image file requested by a user this admin trusts or a popular malicious image           that was spread via social media. This involves social engineering. In the Proof of Concept the file name            cengizhansahinsumofpwn<img src=a onerror=alert(document.cookie)>.jpg was used.
+- An attacker can now determine if the file name with which the malicious file is available on the WordPress site. With this information he can spread the URL to end users and the WordPress admin.
+  - [X] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
 1. (Optional) Vulnerability Name or ID
   - [ ] Summary: 
